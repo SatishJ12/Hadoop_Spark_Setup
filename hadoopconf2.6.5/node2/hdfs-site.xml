@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!--
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,24 @@
 
 <configuration>
 <property>
-<name>mapred.framework.name</name>
-<value>yarn</value>
+<name>dfs.replication</name>
+<value>2</value>
 </property>
+
+<property>
+<name>dfs.datanode.data.dir</name>
+<value>/abc/datanode</value>
+<final>true</final>
+</property>
+
+<property>
+<name>dfs.namenode.http-address</name>
+<value>um1:50070</value>
+</property>
+
+<property>
+<name>dfs.namenode.secondary.http-address</name>
+<value>um2:50090</value>
+</property>
+
 </configuration>

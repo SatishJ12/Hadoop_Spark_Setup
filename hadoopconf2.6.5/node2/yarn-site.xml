@@ -16,12 +16,12 @@
 
 <property>
 <name>yarn.resourcemanager.address</name>
-<value>u10:9001</value>
+<value>um1:9001</value>
 </property>
 
 <property>
 <name>yarn.resourcemanager.resource-tracker.address</name>
-<value>u10:8031</value>
+<value>um1:8031</value>
 </property>
 
 <property>
@@ -36,22 +36,12 @@
 
 <property>
 <name>yarn.nodemanager.resource.memory-mb</name>
-<value>8999</value>
+<value>3999</value>
 </property>
 
 <property>
 <name>yarn.nodemanager.resource.cpu-vcores</name>
-<value>1</value>
-</property>
-
-<property>
-<name>yarn.nodemanager.pmem-check-enabled</name>
-<value>false</value>
-</property>
-
-<property>
-<name>yarn.nodemanager.vmem-check-enabled</name>
-<value>false</value>
+<value>2</value>
 </property>
 
 <property>

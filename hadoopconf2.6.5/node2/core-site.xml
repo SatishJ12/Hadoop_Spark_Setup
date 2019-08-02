@@ -19,6 +19,7 @@
 <configuration>
 <property>
 <name>fs.defaultFS</name>
-<value>hdfs://u10:9000</value>
+<value>hdfs://um1:9000</value>
 </property>
+
 </configuration>
