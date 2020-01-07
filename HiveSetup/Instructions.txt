@@ -1,0 +1,27 @@
+#Download Apache Hive from http://archive.apache.org/dist/hive/hive-2.1.1/
+apache-hive-2.1.1-bin.tar.gz
+
+#untar it to a location
+$cd /usr/local/
+$sudo tar -xvf /home/hdu/Downloads/apache-hive-2.1.1-bin.tar.gz
+
+#create link to hive
+$sudo ln -s apache-hive-2.1.1-bin hive
+
+#change ownership to ur admin id
+$sudo chown -R hdu:hdu apache-hive-2.1.1-bin
+$sudo chown -R hdu:hdu hive
+
+#update .bashrc
+export HIVE_HOME=/usr/local/hive
+export PATH=$PATH:$HIVE_HOME/bin
+export LD_LIBRARY_PATH=$HADOOP_INSTALL/lib/native:$LD_LIBRARY_PATH
+
+#copy the provided hive-site.xml into ur hive conf directory ie /usr/local/hive/conf
+#this means we need to install mysql which will then contain your hive metadata
+#Also copy the provided mysql-connector-java-5.1.48.jar into your hive lib directory ie /usr/local/hive/lib 
+#make sure that anything in hive directory is owned by your admin id
+
+
+
+
