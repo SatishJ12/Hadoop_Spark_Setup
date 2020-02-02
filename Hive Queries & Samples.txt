@@ -1,9 +1,4 @@
-Create Index
---------------
-create index test2x on table test2 (id)
-as 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler'
-with deferred rebuild;
-========================================
+Note**09/01/2020--To be updated
 
 Create database
 ------------
