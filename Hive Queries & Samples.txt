@@ -1,0 +1,136 @@
+Note**09/01/2020--To be updated
+
+Create database
+------------
+create database ajdb1;
+use ajdb1;
+========================================
+Create table
+------------
+create table newtb1(id int, name string, skills array<string>, location map<string,string>);
+
+To load data
+
+load data local inpath './examples/files/myfile1.txt' overwrite into table newtb1;
+
+To append same data
+load data local inpath './examples/files/myfile1.txt' into table newtb1;
+
+Create view:
+create view newtb1v(id,name,skills) as select id,name,skills from newtb1;
+========================================
+
+Contents of myfile1.txt
+-----------------
+10^Azaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Abaj^Ahadoop^Bc++^Bhbase^Bhadoop^B^Ablr^Cindia
+10^Acaj^Ahadoop^Bhue^Bhbase^Bhive^Achennai^Cindia
+10^Adaj^Ahadoop^Boracle^Bsybase^Bhive^Agoa^Cindia
+10^Aeaj^Ahadoop^Bhadoop-administration^Bhbase^Bhive^Ablr^Cindia
+10^Afaj^Ahadoop^Bmysql^Bheidisql^Bhue^Anyc^Cusa
+10^Agaj^Ahadoop^Bmysql^Bhbase^Bhive^Adel^Cindia
+10^Ahaj^Ahadoop^Bmysql^Bhbase^Bhive^Akol^Cindia
+10^Aiaj^Ahadoop^Bmysql^Bhbase^Bhive^Amum^Cindia
+10^Ajaj^Ahadoop^Bmysql^Bhbase^Bhive^Adal^Cusa
+10^Akaj^Ahadoop^Bdb2^Bhbase^Bhive^Aker^Cindia
+10^Alaj^Aoracle^Bmysql^Bsybase^Bmssql^Ablr^Cindia
+10^Amaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Anaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Aoaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Apaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Aqaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Araj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Asaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Ataj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Auaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Avaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Awaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Axaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Ayaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Azaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Aaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Aaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+10^Aaj^Ahadoop^Bmysql^Bhbase^Bhive^Ablr^Cindia
+
+-----------------
+===================================================
+create table newtb2(id int, name string, location map<string,string>);
+load data local inpath './examples/files/myfile2.txt' overwrite into table newtb2;
+
+contents of myfile2.txt
+------------
+10^Azaj^Ablr^Cindia
+10^Abaj^Ablr^Cindia
+10^Acaj^Achennai^Cindia
+10^Adaj^Agoa^Cindia
+10^Aeaj^Ablr^Cindia
+10^Afaj^Anyc^Cusa
+10^Agaj^Adel^Cindia
+10^Ahaj^Akol^Cindia
+10^Aiaj^Amum^Cindia
+10^Ajaj^Adal^Cusa
+10^Akaj^Aker^Cindia
+10^Alaj^Ablr^Cindia
+10^Amaj^Ablr^Cindia
+10^Anaj^Ablr^Cindia
+10^Aoaj^Ablr^Cindia
+10^Apaj^Ablr^Cindia
+10^Aqaj^Ablr^Cindia
+10^Araj^Ablr^Cindia
+10^Asaj^Ablr^Cindia
+10^Ataj^Ablr^Cindia
+
+------------
+===================================================
+create table newtb3(id int,name string, bonus int, year map<string,int>);
+load data local inpath './examples/files/salarydet.txt' overwrite into table newtb3;
+
+contents of salarydet.txt
+----------
+10^Azaj^A10^A1styear^C210000
+10^Aaaj^A10^A1styear^C410000
+10^Abaj^A10^A1styear^C5510000
+10^Acaj^A10^A1styear^C610000
+10^Adaj^A10^A1styear^C710000
+10^Aeaj^A10^A2ndyear^C10000
+10^Afaj^A10^A1styear^C310000
+10^Agaj^A10^A1styear^C1220000
+10^Ahaj^A10^A1styear^C110000
+10^Aiaj^A10^A3rdyear^C1230000
+10^Ajaj^A10^A1styear^C109000
+10^Akaj^A10^A1styear^C110000
+10^Alaj^A10^A1styear^C110000
+10^Amaj^A10^A1styear^C120000
+10^Anaj^A10^A1styear^C10000
+--------
+=====================================================
+Try
+select * from newtb1;
+select name,location from newtb2;
+select name,skills[1] from newtb1;
+select * from newtb3;
+select year["1styear"] as salary from newtb3;
+select year["1styear"] as salary from newtb3 order by salary desc;
+select round((bonus/100*year["1styear"])+year["1styear"]) as salary from newtb3 order by salary desc;
+select round((bonus/100*year["2ndyear"])+year["2ndyear"]) as salary from newtb3 order by salary desc;
+select round(((bonus/100*year["2ndyear"])+year["2ndyear"]), 3) as salary from newtb3 order by salary desc;
+select round(sum(round((bonus/100*year["1styear"])+year["1styear"]))) as salary from newtb3 order by salary desc;
+select explode(skills) from newtb1;
+select explode(year) from newtb3;
+create table newtb4 as select explode(year) from newtb3;
+select * from newtb4 where value=410000;
+select concat_ws('$',skills) from newtb1;
+select concat_ws('     ',skills) from newtb1;
+select regexp_replace(skills[0],'hadoop','dont know') from newtb1;
+select id,name,regexp_replace(skills[0],'hadoop','dont know'),skills[1],skills[2] from newtb1;
+select id,name,regexp_replace(skills[0],'hadoop','special skill'),skills[1],skills[2] from newtb1 
+group by id,name,skills;
+select id,name,skills[0],
+case
+when skills[0]='hadoop' then 'gud'
+else
+'bad'
+end as result from newtb1;
+--------------
+=========================================================
+
