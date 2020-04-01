@@ -1,1 +1,0 @@
-# Hadoop-and-Scala-Setup
