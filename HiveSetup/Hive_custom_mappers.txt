@@ -1,4 +1,0 @@
-create table u_new(columns...) row format delimited
-fields terminated by '\t';
-add file weekday...;
-insert overwrite table u_new select transform(userid,movieid,rating,unixtime) using 'python weekday..' as (userid,movieid,rating,weekday) from u;
