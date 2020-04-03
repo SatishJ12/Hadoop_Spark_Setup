@@ -32,3 +32,54 @@ CDH/HDP
 
 --automatically start ur cluster
 ===================
+Cluster is started...
+HDFS n YARN
+m1-nn
+/orgz/name
+
+m2-snn,dn,nm
+/orgz/snndata
+/orgz/data1
+
+m3-rm
+
+m4-dn,nm
+/orgz/data2
+
+m5-dn,nm
+/orgz/data3
+
+
+128mb block (logical)---any file upto 128mb will use 1 block (1byte/1kb/1mb/...127.9999mb/128)
+1000 files (each file:500mb)----1024mb block size (1000 blocks)--stored on disk
+                                   ?space utilized=500mb*1000
+
+
+hadoop: good for few number of large files...
+       not good for large number of small files ?(because this will create lot of metadata)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
