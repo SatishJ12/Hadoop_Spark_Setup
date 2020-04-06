@@ -1,0 +1,3 @@
+Hadoop==2.6.5
+Hbase==hbase-1.3.2
+zookeeper==Hbase inbuilt
