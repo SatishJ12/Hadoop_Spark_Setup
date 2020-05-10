@@ -45,7 +45,7 @@
 
   <property>
     <name>yarn.scheduler.capacity.root.queues</name>
-    <value>default</value>
+    <value>default,prod,dev</value>
     <description>
       The queues at the this level (root is the root queue).
     </description>
@@ -53,7 +53,7 @@
 
   <property>
     <name>yarn.scheduler.capacity.root.default.capacity</name>
-    <value>100</value>
+    <value>20</value>
     <description>Default queue target capacity.</description>
   </property>
 
@@ -81,6 +81,21 @@
     </description>
   </property>
 
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.capacity</name>
+    <value>30</value>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.capacity</name>
+    <value>50</value>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.maximum-capacity</name>
+    <value>75</value>
+  </property>
+  
   <property>
     <name>yarn.scheduler.capacity.root.default.acl_submit_applications</name>
     <value>*</value>

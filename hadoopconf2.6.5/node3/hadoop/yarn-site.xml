@@ -61,7 +61,12 @@
 
 <property>
 <name>yarn.resourcemanager.scheduler.class</name>
-<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
+</property>
+
+<property>
+<name>yarn.scheduler.fair.allocation.file</name>
+<value>/usr/local/hadoop/etc/hadoop/fair-scheduler.xml</value>
 </property>
 
 <property>
@@ -72,6 +77,36 @@
 <property>
 <name>yarn.nodemanager.vmem-check-enabled</name>
 <value>false</value>
+</property>
+
+<property>
+<name>yarn.nodemanager.resource.memory-mb</name>
+<value>6200</value>
+</property>
+
+<property>
+<name>yarn.nodemanager.resource.cpu-vcores</name>
+<value>2</value>
+</property>
+
+<property>
+<name>yarn.scheduler.minimum-allocation-mb</name>
+<value>3100</value>
+</property>
+
+<property>
+<name>yarn.scheduler.maximum-allocation-mb</name>
+<value>6200</value>
+</property>
+
+<property>
+<name>yarn.scheduler.minimum-allocation-vcores</name>
+<value>1</value>
+</property>
+
+<property>
+<name>yarn.scheduler.maximum-allocation-vcores</name>
+<value>2</value>
 </property>
 
 </configuration>

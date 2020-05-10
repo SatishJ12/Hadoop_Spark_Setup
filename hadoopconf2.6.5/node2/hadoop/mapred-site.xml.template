@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!--
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,35 +17,5 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-<property>
-<name>dfs.replication</name>
-<value>3</value>
-</property>
-
-<property>
-<name>dfs.namenode.name.dir</name>
-<value>/orgz/name</value>
-</property>
-
-<property>
-<name>dfs.datanode.data.dir</name>
-<value>/orgz/data1</value>
-<final>true</final>
-</property>
-
-<property>
-<name>dfs.namenode.http-address</name>
-<value>u1:50070</value>
-</property>
-
-<property>
-<name>dfs.namenode.secondary.http-address</name>
-<value>u2:50090</value>
-</property>
-
-<property>
-<name>topology.script.file.name</name>
-<value>/usr/local/hadoop/etc/hadoop/topology.sh</value>
-</property>
 
 </configuration>

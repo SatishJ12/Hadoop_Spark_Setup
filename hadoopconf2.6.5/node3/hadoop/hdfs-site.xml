@@ -19,7 +19,7 @@
 <configuration>
 <property>
 <name>dfs.replication</name>
-<value>2</value>
+<value>3</value>
 </property>
 
 <property>
@@ -30,12 +30,12 @@
 
 <property>
 <name>dfs.namenode.http-address</name>
-<value>um1:50070</value>
+<value>u1:50070</value>
 </property>
 
 <property>
 <name>dfs.namenode.secondary.http-address</name>
-<value>um2:50090</value>
+<value>u2:50090</value>
 </property>
 
 

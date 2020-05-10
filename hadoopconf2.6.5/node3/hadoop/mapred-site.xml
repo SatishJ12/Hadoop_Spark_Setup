@@ -22,5 +22,8 @@
 <value>yarn</value>
 </property>
 
-
+<property>
+<name>mapreduce.job.reduces</name>
+<value>3</value>
+</property>
 </configuration>
